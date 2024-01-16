@@ -1,0 +1,171 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+:root 
+{
+    --preto : #333333;
+
+    --font-subtitulo : 2.5em;
+
+    --size--navitem: 1.2em;
+}
+
+nav
+{
+
+    height: 80px;
+    transition: height 0.5s ease, top 0.5s ease;
+}
+
+._nav-fixed
+{
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1;
+    /* background-color: white; */
+    /* border-bottom: 1px solid black; */
+    transition: height 0.5s ease, top 0.5s ease;
+}
+
+.nav-item
+{
+    font-size: var(--size--navitem);
+}
+
+
+
+
+.subtitulo
+{
+    font-size: var(--font-subtitulo);
+    font-weight: bold;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.paragrafo
+{
+    font-size: 1.2em;
+}
+
+.separacao
+{
+    background-color: var(--preto);
+    height: 500px;
+    width: 100%;
+    margin: 50px 0px;
+}
+
+header
+{
+    /* height: 600px; */
+    padding-top: 50px;
+    
+    /* background-color: red; */
+}
+
+header h1 
+{
+    font-size: 3em;
+    line-height: 70px;
+    letter-spacing: 5px;
+    font-weight: 400;
+}
+
+.servicos 
+{
+    flex-wrap: wrap;
+}
+
+.servicos .card 
+{
+    /* background-color: rgba(255, 0, 0, 0.404); */
+    height: 300px;
+    padding: 0px;
+}
+
+.servicos .card .card-top
+{
+    height: 20%;
+    /* background-color: blue; */
+    font-size: 3em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.servicos .card .card-body
+{
+    height: 80%;
+    padding: 0px;
+    /* background-color: red; */
+}
+
+.card-body h3 
+{
+    /* background-color: yellowgreen; */
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-body ul 
+{
+    /* background-color: red; */
+    width: 100%;
+}
+
+.card-body ul li 
+{
+    font-size: 0.9em;
+    /* background-color: blue; */
+}
+
+    /* Estilo inicial do elemento details e do conteúdo interno */
+    .faq {
+        /* width: 80%; */
+        border: 1px solid black;
+        transition: max-height 0.5s ease;
+        overflow: hidden;
+        /* max-height: 0; */
+        margin-bottom: 10px;
+        margin: 10px;
+      }
+  
+      .faq[open] {
+        max-height: 200px; /* Altura máxima quando o details está aberto */
+        border-radius: 0px 0px 10px 10px;
+      }
+  
+      /* Estilo para o summary */
+      .faq summary {
+        background-color: var(--preto); /* Certifique-se de que --preto seja definido no seu CSS ou em um arquivo de variáveis */
+        color: white;
+        padding: 10px;
+        font-weight: bold;
+        cursor: pointer; /* Adiciona cursor apontando para indicar que é clicável */
+      }
+  
+      /* Estilo para o conteúdo interno do details */
+      .faq .detail__text {
+        color: var(--preto);
+        padding: 10px;
+        /* background-color: blue; Corrigido: removi a duplicação da propriedade backgroundColor */
+        width: 100%;
+      }
+
+@media screen and (max-width:1000px)
+{
+    header h1 {
+        font-size: 1.5em;
+        line-height: 60px;
+        letter-spacing: 2px;
+        font-weight: 600;
+    }
+}
