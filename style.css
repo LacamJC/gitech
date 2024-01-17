@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Nunito+Sans:wght@400;500;700&display=swap');
+
 *
 {
     margin: 0px;
@@ -7,15 +9,30 @@
 :root 
 {
     --preto : #333333;
+    --cor1: #575757;
+    --cor2: #7F7F7F;
+
+    --fonte1 : 'Nunito Sans', cursive;
+    --fonte2: 'Merriweather', cursive;
 
     --font-subtitulo : 2.5em;
 
     --size--navitem: 1.2em;
 
-    --text-shadow: -2px 3px 9px rgba(0,0,0,0.44);
-    --text-shadow-lite: -2px 0px 8px rgba(0,0,0,0.27);
-    --text-shadow-medium:  0px 0px 8px rgba(0,0,0,0.34);
+    --text-shadow: -1px 2px 6px rgba(0, 0, 0, 0.171);
+    --text-shadow-lite: -1px 0px 4px rgba(0,0,0,0.27);
+    --text-shadow-medium:  0px 0px 4px rgba(0, 0, 0, 0.226);
      
+}
+
+.navbar, .container-fluid
+{
+    background-color: white;
+}
+
+.container-fluid 
+{
+    box-shadow: var(--text-shadow-lite);
 }
 
 nav
@@ -37,9 +54,43 @@ nav
     transition: height 0.5s ease, top 0.5s ease;
 }
 
+.navbar-brand
+{
+    font-family: var(--fonte1);
+    color: var(--cor2);
+}
+
+.nav-link
+{
+    color: var(--cor2);
+}
+
+
 .nav-item
 {
     font-size: var(--size--navitem);
+    font-family: var(--fonte2);
+    margin: 0px 20px;
+
+    /* background-color: red; */
+    /* padding: 5px 5px; */
+}
+
+.nav-item .line-active
+{
+    position: relative;
+    bottom: 10px;
+
+    width: 1%;
+    border: 1px solid transparent;
+
+    transition: width 1s ease;
+}
+
+.nav-item:hover .line-active
+{
+    border: 1px solid black;
+    width: 100%;
 }
 
 
@@ -52,12 +103,18 @@ nav
     text-align: center;
     padding-top: 100px;
     text-shadow: var(--text-shadow-medium);
+    font-family: var(--fonte2);
+    letter-spacing: 5px;
+    color: var(--cor1);
 }
 
 .paragrafo
 {
     font-size: 1.2em;
+    font-family: var(--fonte1);
     text-shadow: var(--text-shadow-lite);
+    color: var(--cor1);
+    text-indent: 20px;
 }
 
 .separacao
@@ -83,6 +140,8 @@ header h1
     letter-spacing: 5px;
     font-weight: 400;
     text-shadow: var(--text-shadow);
+    font-family: var(--fonte2);
+    color: var(--preto);
 }
 
 .botao
@@ -96,8 +155,10 @@ header h1
     justify-content: center;
     align-items: center;
     letter-spacing: 5px;
-    font-size: 1.2em;
+    font-size: 1.4em;
+    font-weight: bold;
     margin-bottom: 30px;
+    font-family: var(--fonte1);
 }
 
 .botao:hover 
@@ -133,8 +194,18 @@ header h1
 .servicos .card .card-body
 {
     height: 80%;
-    padding: 0px;
+    padding: 0px 10px;
     /* background-color: red; */
+}
+
+.servicos .card .card-body p 
+{
+    letter-spacing: 2px;
+    line-height: 21px;
+    font-size: 1.1em;
+    text-indent: 15px;
+    font-family: var(--fonte1);
+    font-weight: 500;
 }
 
 .card-body h3 
@@ -143,7 +214,10 @@ header h1
     font-size: 1.2em;
     text-align: center;
     font-weight: bold;
+    color: var(--cor1);
 }
+
+
 
 .card-body ul 
 {
@@ -156,6 +230,8 @@ header h1
     font-size: 0.9em;
     /* background-color: blue; */
 }
+
+
 
     /* Estilo inicial do elemento details e do conteúdo interno */
     .faq {
@@ -189,6 +265,21 @@ header h1
         /* background-color: blue; Corrigido: removi a duplicação da propriedade backgroundColor */
         width: 100%;
       }
+
+
+@media screen and (max-width: 600px)
+{
+    .botao 
+    {
+        font-size: 1.2em;
+        height: 70px;
+    }
+
+    .servicos
+    {
+        padding: 30px;
+    }
+}
 
 @media screen and (max-width:1000px)
 {
