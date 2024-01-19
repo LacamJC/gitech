@@ -9,6 +9,10 @@
 :root 
 {
     --preto : #333333;
+    --branco : #EDEDED;
+
+    --destaque: #2c3e50;
+
     --cor1: #575757;
     --cor2: #7F7F7F;
 
@@ -24,6 +28,11 @@
     --text-shadow-lite: -1px 0px 4px rgba(0,0,0,0.27);
     --text-shadow-medium:  0px 0px 4px rgba(0, 0, 0, 0.226);
      
+}
+
+body
+{
+    background-color: var(--branco);
 }
 
 .navbar, .container-fluid
@@ -82,7 +91,7 @@ nav
     width: 1%;
     border: 1px solid transparent;
 
-    transition: width 1s ease;
+    transition: all 0.5s ease;
 }
 
 .nav-item:hover .line-active
@@ -144,26 +153,34 @@ header h1
 
 .botao
 {
-
-    width: 80%;
-    height: 50px;
-    margin: auto;
-    border: 1px solid black;
+    width: 350px;
+    height: 70px;
+    margin: auto auto 30px;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
-    letter-spacing: 5px;
-    font-size: 1.4em;
-    font-weight: bold;
-    margin-bottom: 30px;
-    font-family: var(--fonte1);
+    letter-spacing: 3px;
+    font-size: 1.5em;
+    font-weight: 500;
+    font-family: var(--fonte2);
+
+    color: var(--branco);
+    background-color: var(--destaque)  !important;
+
+    transition: all 0.5s ease;
 }
 
 .botao:hover 
 {
-    background-color: var(--preto);
-    color: white;
+    /* border: 2px solid black; */
     /* font-weight: bold; */
+    /* color: var(--destaque); */
+    /* background-color: var(--branco) !important; */
+    /* transform: scale(1.01); */
+    color: var(--branco);
+    transform: translateX(10px) translateX(5px) scale(1.01);
+    box-shadow: -1px 1px 6px #000000a6;
 }
 
 .servicos 
@@ -171,12 +188,47 @@ header h1
     flex-wrap: wrap;
 }
 
+/* .sectionServicos:hover h2
+{
+    text-decoration: underline;
+} */
+
+.sectionServicos h2 
+{
+    width: 250px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.sectionServicos h2 .active 
+{
+    width: 1%;
+    border: 1px solid transparent;
+    transition: all 1s ease;
+}
+
+.sectionServicos:hover h2 .active 
+{
+    width: 100%;
+    border: 1px solid black;
+}
+
+
 .servicos .card 
 {
     /* background-color: rgba(255, 0, 0, 0.404); */
     height: 300px;
-    box-shadow: -10px 10px 7px #0000004f;;
+    /* box-shadow: -10px 10px 7px #0000004f; */
+    box-shadow: 0px 0px 7px #0000004f;
     padding: 0px;
+
+    transition: all 0.5s ease;
+}
+
+.servicos .card:hover 
+{
+    box-shadow: -10px 10px 7px #0000004f;
+    transform: scale(1.01);
 }
 
 .servicos .card p 
@@ -192,19 +244,19 @@ header h1
 
 .servicos .card:hover .faicon1 
 {
-    color: green;
+    color: #DB2592;
     text-shadow: -5px 5px 5px #00000059;
 }
 
 .servicos .card:hover .faicon2
 {
-    color: blue;
+    color: #DB8525;
     text-shadow: -5px 5px 5px #00000059;
 }
 
 .servicos .card:hover .faicon3
 {
-    color: yellow;
+    color: #DB6525;
     text-shadow: -5px 5px 5px #00000059;
 }
 
@@ -236,10 +288,11 @@ header h1
 
 .servicos .card .card-body p 
 {
-    letter-spacing: 2px;
+    padding: 0px 15px;
+    letter-spacing: 3px;
     line-height: 21px;
     font-size: 1.1em;
-    text-indent: 15px;
+    /* text-indent: 15px; */
     font-family: var(--fonte1);
     font-weight: 500;
 }
@@ -283,6 +336,7 @@ header h1
       .faq[open] {
         max-height: 200px; /* Altura máxima quando o details está aberto */
         border-radius: 0px 0px 10px 10px;
+        background-color: white;
       }
   
       /* Estilo para o summary */
@@ -303,6 +357,81 @@ header h1
       }
 
 
+      /* Quem somos */
+
+.indice 
+{
+    border: 1px solid black;
+    width: 60%;
+    margin: auto;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    margin-top: 10px;
+    list-style-type: disclosure-closed;
+    list-style-position: inside;
+
+    background-color: var(--preto);
+}
+
+.indice li 
+{
+    /* background-color: red; */
+    padding: 5px 20px;
+    font-size: 1.1em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    color: var(--branco);
+    font-weight: bold;
+    font-family: var(--fonte2);
+    letter-spacing: 3px;
+}
+
+.indice a 
+{
+    text-decoration: none;
+    color: var(--preto);
+}
+
+.indice a .active 
+{
+    width: 0%;
+    border: 1px solid transparent;
+    position: relative;
+    /* bottom: 15px; */
+
+    transition: all 0.5s ease;
+}
+
+.indice a:hover 
+{
+    /* font-size: 1.2em; */
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+.indice a:hover li li::marker
+{
+    transform: translateX(10px);
+}
+
+.indice a:hover .active 
+{
+    width: 100%;
+    border: 1px solid var(--branco);
+}
+
+/*  */
+
+.line_faq
+{
+    display: flex; justify-content: center; height: 200px; 
+}
+
 @media screen and (max-width: 600px)
 {
     .botao 
@@ -315,6 +444,16 @@ header h1
     {
         padding: 30px;
     }
+
+    .indice
+    {
+        width: 90%;
+    }
+
+    .line_faq
+    {
+        height: 400px;
+    }
 }
 
 @media screen and (max-width:1000px)
@@ -326,3 +465,4 @@ header h1
         font-weight: 600;
     }
 }
+
