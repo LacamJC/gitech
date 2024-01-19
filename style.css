@@ -18,6 +18,7 @@
     --font-subtitulo : 2.5em;
 
     --size--navitem: 1.2em;
+    --paragrafo-shadow: ;
 
     --text-shadow: -1px 2px 6px rgba(0, 0, 0, 0.171);
     --text-shadow-lite: -1px 0px 4px rgba(0,0,0,0.27);
@@ -30,10 +31,7 @@
     background-color: white;
 }
 
-.container-fluid 
-{
-    box-shadow: var(--text-shadow-lite);
-}
+
 
 nav
 {
@@ -177,8 +175,46 @@ header h1
 {
     /* background-color: rgba(255, 0, 0, 0.404); */
     height: 300px;
+    box-shadow: -10px 10px 7px #0000004f;;
     padding: 0px;
 }
+
+.servicos .card p 
+{
+    text-shadow: var(--text-shadow-lite);
+}
+
+.servicos .card:hover .faicon 
+{
+    color: red;
+    text-shadow: -5px 5px 5px #00000059;
+}
+
+.servicos .card:hover .faicon1 
+{
+    color: green;
+    text-shadow: -5px 5px 5px #00000059;
+}
+
+.servicos .card:hover .faicon2
+{
+    color: blue;
+    text-shadow: -5px 5px 5px #00000059;
+}
+
+.servicos .card:hover .faicon3
+{
+    color: yellow;
+    text-shadow: -5px 5px 5px #00000059;
+}
+
+.faicon
+{
+    text-shadow: 0px 0px 5px #00000059;
+    transition: all 0.5s ease;
+    color: transparent;
+}
+
 
 .servicos .card .card-top
 {
