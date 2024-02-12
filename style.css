@@ -19,6 +19,14 @@
     --fonte1 : 'Nunito Sans', cursive;
     --fonte2: 'Merriweather', cursive;
 
+    font-size: 100%; /* 16 px */
+
+    --font-size-1: 2.25rem;   /* 48px */
+    --font-size-2: 1.5rem;    /* 32px */
+    --font-size-3: 1rem;
+    --font-size-4: 0.75rem;   /* 16px */
+
+
     --font-subtitulo : 2.5em;
 
     --size--navitem: 1.2em;
@@ -29,6 +37,18 @@
     --text-shadow-medium:  0px 0px 4px rgba(0, 0, 0, 0.226);
      
 }
+
+@media  (min-width: 768px)
+{
+    :root {
+        --font-size-1: 3rem;   /* 48px */
+        --font-size-2: 2rem;    /* 32px */
+        --font-size-3: 1rem;
+        --font-size-4: 0.75rem;   /* 16px */
+
+    }
+}
+
 
 body
 {
@@ -117,7 +137,7 @@ nav
 
 .paragrafo
 {
-    font-size: 1.2em;
+    font-size: var(--font-size-2);
     font-family: var(--fonte1);
     text-shadow: var(--text-shadow-lite);
     color: var(--cor1);
@@ -142,7 +162,7 @@ header
 
 header h1 
 {
-    font-size: 3em;
+    font-size: var(--font-size-1);
     line-height: 70px;
     letter-spacing: 5px;
     font-weight: 400;
@@ -226,7 +246,8 @@ header h1
     /* box-shadow: -10px 10px 7px #0000004f; */
     box-shadow: 0px 0px 7px #0000004f;
     padding: 0px;
-
+    opacity: 0.2;
+    transform: scale(0.1);
     transition: all 0.5s ease;
     cursor: default;
 }
@@ -236,6 +257,24 @@ header h1
     box-shadow: -10px 10px 7px #0000004f;
     transform: scale(1.01);
 }
+
+
+
+.showLeg
+{
+    transition: all 0.5s ease;
+    opacity: 0.2;
+    transform: scale(0.1);
+}
+
+.visivel
+{
+    /* background-color: red; */
+    opacity: 1 !important;
+    transform: scale(1) !important;
+
+}
+
 
 .servicos .card p 
 {
@@ -298,7 +337,8 @@ header h1
     padding: 0px 15px;
     letter-spacing: 3px;
     line-height: 21px;
-    font-size: 0.9em;
+    /* font-size: 0.9em; */
+    font-size: var(--font-size-3);
     /* text-indent: 15px; */
     font-family: var(--fonte1);
     font-weight: 500;
@@ -572,13 +612,17 @@ header h1
 {
     background-color: var(--preto);
     color: white;
-    height: 400px;
+    height: 200px;
     width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
 }
 
 .footer__header
 {
-    background-color: rgba(0, 0, 255, 0.13);
+    /* background-color: rgba(0, 0, 255, 0.13); */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -602,21 +646,39 @@ header h1
 
 .footer__middle
 {
-    background-color: rgba(255, 0, 0, 0.178);
+    /* background-color: rgba(255, 0, 0, 0.178); */
     text-align: center;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    height: 100%;
     font-weight: bold;
     font-size: 1.2em;
     letter-spacing: 5px;
     font-family: var(--fonte2);
 }
 
+.footer__bottom
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__item
+{
+    /* background-color: red; */
+    width: 33%;
+    padding: 10px 20px;
+}
+
 @media screen and (max-width: 600px)
 {
+    .footer__item
+    {
+        width: 100%;
+    }
     .botao 
     {
         font-size: 1.2em;
@@ -650,6 +712,13 @@ header h1
     .cards_faq h5 
     {
         border-radius: 0px;
+    }
+
+    header h1 
+    {
+        background-color: red;
+        font-size: var(--font-size-4);
+        text-align: start;
     }
 
 }
