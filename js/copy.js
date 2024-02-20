@@ -1,5 +1,16 @@
-function copyTel(){
-    const tel = document.getElementById('numeroTel')
+const containerTel = document.getElementById('containerTel');
+
+containerTel.addEventListener('click', ()=>{
+  let copyAlert = document.getElementById('copyAlertTel');
+  containerTel.classList.add('click');
+  copyAlert.classList.add('opacityShow');
+  copyAlert.classList.add('opacityHidden');
+  setTimeout(()=>{
+    containerTel.classList.remove('click');
+    copyAlert.classList.remove('opacityShow');
+    copyAlert.classList.add('opacityHidden');
+  }, 1100)
+  const tel = document.getElementById('numeroTel')
 
     const tempInput = document.createElement('input')
     tempInput.value = tel.innerText
@@ -15,28 +26,38 @@ function copyTel(){
     // Remover o elemento temporário
     document.body.removeChild(tempInput);
 
-    // Alertar o usuário que o número foi copiado
-    alert("Número copiado: " + tempInput.value);
 
-  }
+});
 
-  function copyEmail(){
-    const tel = document.getElementById('email')
+const containerEmail = document.getElementById('containerEmail');
 
-    const tempInput = document.createElement('input')
-    tempInput.value = tel.innerText
+containerEmail.addEventListener('click', ()=>{
+  let copyAlert = document.getElementById('copyAlertEmail');
+  containerEmail.classList.add('click')
 
-    document.body.appendChild(tempInput)
+  copyAlert.classList.add('opacityShow');
+  copyAlert.classList.add('opacityHidden');
 
-    tempInput.select();
-    tempInput.setSelectionRange(0, 99999); /* Para dispositivos móveis */
+  setTimeout(()=>{
+    containerEmail.classList.remove('click');
+    copyAlert.classList.remove('opacityShow');
+    copyAlert.classList.add('opacityHidden');
+  }, 1100)
+  const tel = document.getElementById('emailText')
 
-      // Copiar o texto para a área de transferência
-    document.execCommand("copy");
+  const tempInput = document.createElement('input')
+  tempInput.value = tel.innerText
 
-    // Remover o elemento temporário
-    document.body.removeChild(tempInput);
+  document.body.appendChild(tempInput)
 
-    // Alertar o usuário que o número foi copiado
-    alert("Email copiado: " + tempInput.value);
-  }
+  tempInput.select();
+  tempInput.setSelectionRange(0, 99999); /* Para dispositivos móveis */
+
+    // Copiar o texto para a área de transferência
+  document.execCommand("copy");
+
+  // Remover o elemento temporário
+  document.body.removeChild(tempInput);
+
+
+})
