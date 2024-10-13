@@ -590,4 +590,10 @@ header h1 {
   {
     width: 100%;
   }
+
+  @media screen and (max-width:430px)
+  {
+    width: 340px;
+    margin: 20px 0px;
+  }
 }

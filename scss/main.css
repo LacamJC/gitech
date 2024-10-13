@@ -618,4 +618,10 @@ header h1 {
   .mobile__image {
     width: 100%;
   }
+}
+@media screen and (max-width: 430px) {
+  .mobile__image {
+    width: 340px;
+    margin: 20px 0px;
+  }
 }/*# sourceMappingURL=main.css.map */
