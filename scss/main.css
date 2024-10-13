@@ -99,7 +99,7 @@ nav {
 
 .navbar-brand {
   font-family: var(--fonte1);
-  color: var(--cor2);
+  color: #2c3e50;
 }
 
 .nav-link {
@@ -606,4 +606,16 @@ header h1 {
 .link {
   color: #2c3e50;
   font-weight: bold;
+}
+
+@media screen and (min-width: 600px) {
+  .mobile__image {
+    width: 50%;
+    float: left;
+  }
+}
+@media screen and (max-width: 600px) {
+  .mobile__image {
+    width: 100%;
+  }
 }/*# sourceMappingURL=main.css.map */

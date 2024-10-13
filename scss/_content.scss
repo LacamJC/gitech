@@ -60,7 +60,7 @@ nav {
 
 .navbar-brand {
   font-family: var(--fonte1);
-  color: var(--cor2);
+  color: $destaque;
 }
 
 .nav-link {
@@ -577,4 +577,17 @@ header h1 {
 .link{
   color: $destaque;
   font-weight: bold;
+}
+
+.mobile__image
+{
+  @media screen and (min-width: 600px){
+      width: 50%;
+      float: left;
+  }
+
+  @media screen and (max-width:600px)
+  {
+    width: 100%;
+  }
 }
