@@ -597,3 +597,30 @@ header h1 {
     margin: 20px 0px;
   }
 }
+
+.btn-contact
+{
+  background-color: $destaque;
+  border-color: $destaque;
+  border-width: 2px;
+  font-weight: bold;
+  margin-left: 50px !important;
+  &:hover{
+    background-color: $branco;
+    color: $destaque;
+    border-color: $destaque;
+    border-width: 2px;
+  }
+  
+}
+
+// .box-nav
+// {
+//   background-color: red;
+//   width: 100%;
+
+//   @media screen and (min-width:786px)
+//   {
+//     padding-left: 30px;
+//   }
+// }
