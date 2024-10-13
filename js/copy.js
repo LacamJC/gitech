@@ -1,63 +1,22 @@
-const containerTel = document.getElementById('containerTel');
-
-containerTel.addEventListener('click', ()=>{
-  let copyAlert = document.getElementById('copyAlertTel');
-  containerTel.classList.add('click');
-  copyAlert.classList.add('opacityShow');
-  copyAlert.classList.add('opacityHidden');
-  setTimeout(()=>{
-    containerTel.classList.remove('click');
-    copyAlert.classList.remove('opacityShow');
-    copyAlert.classList.add('opacityHidden');
-  }, 1100)
-  const tel = document.getElementById('numeroTel')
-
-    const tempInput = document.createElement('input')
-    tempInput.value = tel.innerText
-
-    document.body.appendChild(tempInput)
-
-    tempInput.select();
-    tempInput.setSelectionRange(0, 99999); /* Para dispositivos móveis */
-
-      // Copiar o texto para a área de transferência
-    document.execCommand("copy");
-
-    // Remover o elemento temporário
-    document.body.removeChild(tempInput);
-
-
-});
 
 const containerEmail = document.getElementById('containerEmail');
 
 containerEmail.addEventListener('click', ()=>{
-  let copyAlert = document.getElementById('copyAlertEmail');
-  containerEmail.classList.add('click')
+    // Seleciona o elemento a ser copiado
+    var textoCopiar ="d";
 
-  copyAlert.classList.add('opacityShow');
-  copyAlert.classList.add('opacityHidden');
+    // Cria um textarea temporário
+    var textarea = document.createElement('textarea');
+    textarea.value = textoCopiar.textContent;
+    document.body.appendChild(textarea);
+    textarea.select();
 
-  setTimeout(()=>{
-    containerEmail.classList.remove('click');
-    copyAlert.classList.remove('opacityShow');
-    copyAlert.classList.add('opacityHidden');
-  }, 1100)
-  const tel = document.getElementById('emailText')
+    // Copia o texto para a área de transferência
+    document.execCommand('copy');
 
-  const tempInput = document.createElement('input')
-  tempInput.value = tel.innerText
+    // Remove o textarea temporário
+    document.body.removeChild(textarea);   
 
-  document.body.appendChild(tempInput)
-
-  tempInput.select();
-  tempInput.setSelectionRange(0, 99999); /* Para dispositivos móveis */
-
-    // Copiar o texto para a área de transferência
-  document.execCommand("copy");
-
-  // Remover o elemento temporário
-  document.body.removeChild(tempInput);
 
 
 })
